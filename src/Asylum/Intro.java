@@ -1,3 +1,5 @@
+package Asylum;
+
 import Asylum.util.Effects;
 
 public class Intro {

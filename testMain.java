@@ -1,4 +1,4 @@
-//테스트용 Main
+//테스트용 Asylum.Main
 
 import Asylum.util.Effects;
 

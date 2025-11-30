@@ -27,20 +27,19 @@ public class Interaction {
                     return answer;
                     //이 다음에 loop를 끝내려고 break를 썼는데 이미 return 값 때문에 루프에서 벗어나서 break에 도달할 수가 없어서 실행이 안된다고 함.
 
-                }
-
-                attempts++;
-
-                if (attempts >= 8) {//수정 필요
+                } else if (attempts >= 8) {//수정 필요
 
                     Effects.typePrint(Effects.RED + "다른 방법은 없다고 말했을텐데...?" + Effects.RESET,Effects.DEFAULT_SLOW);
 
                 } else if (attempts >= 4 && attempts < 8) {
 
+                    attempts++;
                     Effects.fourTimes("다른 방법은 존재하지 않습니다", attempts);
+
                 }
                 else {
 
+                    attempts++;
                     System.out.println("다른 방법은 존재하지 않습니다");
 
                 }
