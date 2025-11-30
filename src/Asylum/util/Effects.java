@@ -18,7 +18,7 @@ public abstract class Effects {
     //System.out.println(Asylum.game.Effects.STROKE + "TEST 하는 중" + Asylum.game.Effects.RESET); < 이런 식으로 앞에 class명 붙여넣어주어야 하는듯.
 
 
-    //1. 천천히 한 글자씩 타이핑하는 효과
+    //천천히 한 글자씩 타이핑하는 효과
     public static void typePrint(String text, long delay) { //여기서 text와 delay가 파람.
         //InterruptedException - Thread.sleep이라는 예외를 처리하기 위해서 필요.
         //try-catch는 여기서 처리해야하지만 throws는 이 method를 사용하는 쪽에서 처리하라고 하는 data validation 역할.
@@ -44,21 +44,35 @@ public abstract class Effects {
         System.out.println();// \n 넣어주는 역할
 
     }
-    public static final long DEFAULT_DELAY = 230; //여기서 DEFAULT_DELAY는 파람이 아니고 상수(constant)라고 한다고 함. 그래서 대문자 & 언더스코어.
-    public static final long DEFAULT_SLOW = 400;
-    public static final long DEFAULT_FAST = 120;
+    public static final long DELAY_DEFAULT = 230; //여기서 DEFAULT_DELAY는 파람이 아니고 상수(constant)라고 한다고 함. 그래서 대문자 & 언더스코어.
+    public static final long DELAY_SLOW = 400;
+    public static final long DELAY_FAST = 10;
 
-    public enum Speed { //같은 type 모음. 클래스처럼 움직여서 Speed 앞글자가 대문자.
-
-    }
+//    public enum Speed { //같은 type 모음. 클래스처럼 움직여서 Speed 앞글자가 대문자.
+//
+//    }
 
     public static void typePrint(String text) { //처음으로 오버로딩 써봄 오오
-        typePrint(text, DEFAULT_DELAY);
+        typePrint(text, DELAY_DEFAULT);
+
+    }
+
+        //라인 하나씩마다 sleep 기능 넣기
+    public static final long DELAY_LINE = 40;
+    public static void typePrintLn(String text) {
+        System.out.println(text);
+        sleep(DELAY_LINE);
+
+    }
+
+    public static void typePrintLn(String text, long Delay) {
+        System.out.println(text);
+        sleep(Delay);
+
     }
 
 
-
-    //2. 입력값이 4번 이상 넘어가면 글자를 빨갛게 바꿔주는 효과
+    //입력값이 4번 이상 넘어가면 글자를 빨갛게 바꿔주는 효과
     public static void fourTimes(String text, int attempts) {
 
         if (attempts >= 4) {
@@ -71,7 +85,7 @@ public abstract class Effects {
 
     }
 
-    //3. Thread.sleep을 캡슐화. (유틸리티로 분류되어서 package에 util이라고 분류되어서 갖다놓고 쓴다)
+    //Thread.sleep을 캡슐화. (유틸리티로 분류되어서 package에 util이라고 분류되어서 갖다놓고 쓴다)
     public static void sleep(long ms) {
         try {
             Thread.sleep(ms);
@@ -79,7 +93,7 @@ public abstract class Effects {
     }
 
 
-    //4. 빠른 커서 깜빡임. 일단은 ▼로 하드 코딩
+    //빠른 커서 깜빡임. 일단은 ▼로 하드 코딩
     public static void blinkFast(long ms) {
         for (int i = 0; i < 20; i++) {
             System.out.print("▼");
@@ -96,7 +110,7 @@ public abstract class Effects {
         }
     }
 
-    //5. 일반 깜빡이는거... 챗지피티가 짜줌. 그냥 넣어봄
+    //일반 깜빡이는거... 챗지피티가 짜줌. 그냥 넣어봄
     public static void blinkSlow(long ms) {
         boolean up = false;
 
@@ -116,7 +130,7 @@ public abstract class Effects {
         System.out.flush();
     }
 
-    //6. 진짜 짜고 싶었던 엔터 칠 때까지 계속 깜빡이고, 엔터 치면 사라지는 기능
+    //진짜 짜고 싶었던 엔터 칠 때까지 계속 깜빡이고, 엔터 치면 사라지는 기능
         private static volatile boolean blinking = false;
         public static void blinkEnter() {
 
