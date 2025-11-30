@@ -1,23 +1,10 @@
 package Asylum;
 
-import Asylum.util.Interaction;
-
 public class Main {
-    static void main(String[] args) throws InterruptedException {
+    static void main(String[] args) {
 
-    Intro.loading();
-    int answer = Interaction.simpleYN();
-
-    switch (answer) {
-        case 1:
-            Intro.introNote();
-            Intro.title();
-            break;
-        case 2:
-            Intro.title();
-            break;
-    }
-
+        GameManager gm = new GameManager();
+        gm.start();
 
     }
 

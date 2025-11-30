@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Interaction {
 
-    public static int simpleYN () {
+    public static int introYN () {
         //이 int 값을 돌려줘서 밖에서 받아서 switch로 연결되어야하기 때문. 리턴 값이 뭔지를 정하는 것. void는 줄 건 없어 > 게임이 진행이 안됨.
 
             Scanner sc = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class Interaction {
 
                 attempts++;
 
-                if (attempts >= 8) {//수정 필요
+                if (attempts >= 8) {
                     Effects.typePrint(Effects.RED + "다른 방법은 없다고 말했을텐데...?\n" + Effects.RESET,Effects.DEFAULT_SLOW);
 
                 } else if (attempts >= 4 && attempts < 8) {
