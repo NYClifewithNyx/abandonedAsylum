@@ -1,10 +1,9 @@
 //감독 역할을 하는 클래스
 
 package Asylum;
-import Asylum.scenario.Prologue;
+import Asylum.scenario.*;
 import Asylum.util.Effects;
 import Asylum.util.Interaction;
-import java.util.Scanner;
 
 import static Asylum.util.Effects.DELAY_SLOW;
 
@@ -22,41 +21,95 @@ public class GameManager {
             Intro.introNote();
         }
 
-        titleLoop();
+        titleLoop(true);
+        titleLoop(false);
 
     }
 
-    private void titleLoop() {
-       while (true) {
-            Intro.title();
+    private void titleLoop(boolean normal) {
+        while (true) {
+            // 1. 타이틀 출력
+            if (normal) {
+                Intro.title();
+            } else {
+                Intro.titleSecret();
+            }
+
+            //2. 선택 입력
             String choice = Interaction.getMenuChoice();
 
+            //3. 메뉴
             switch (choice) { // ->는 자바 14+부터 적용이 되는, break를 따로 안해도 되는 루프
-                case "1" -> Prologue.prologue();
-                case "2" -> System.out.println("loadGame()");
-                case "3" -> Intro.introNote();
-                case "4" -> {
-                    Effects.typePrint(Effects.RED + "어떻게... 알았지....?" + Effects.RESET);
+                case "1" -> {
+                    System.out.println("프롤로그를 스킵할까요?");
 
-                    for (int i = 0; i <= 1000; i++) {
-                        System.out.print(Effects.RED + "ㅋ");
+                    int answer = Interaction.SimpleYN();
+
+                    if (answer == 1) {
+                        Chapter1.chapter1();
+
+                    } else {
+                        Prologue.prologue();
+
+                    }
+                }
+
+                case "2" -> System.out.println("loadGame()");
+
+                case "3" -> Intro.introNote();
+
+                case "4" -> {
+
+                    if (normal) {
+                        System.out.println();
+                        Effects.typePrint(Effects.RED + "어떻게..." + "\n알았지....?" + Effects.RESET);
+                        Effects.typePrint(Effects.RED + "ㅋ", 100);
+                        Effects.typePrint(Effects.RED + "ㅋ", 80);
+                        Effects.typePrint(Effects.RED + "ㅋ", 50);
+
+                        int lineWidth = 80;
+
+                        for (int i = 0; i <= 1280; i++) {
+                            System.out.print(Effects.RED + "ㅋ");
+
+                            if (i % lineWidth == 0) {
+                                System.out.print("\n");
+
+                            }
+                        }
+                        Effects.sleep(600);
+                        return;
+
+                    } else {
+                            System.out.println();
+                            Effects.typePrint(Effects.RED + "지금 거신 번호는 없는 번호이오니..." + Effects.RESET);
+                            Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
+                            Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
+                            Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
+                            System.out.println("전화가 끊겼습니다");
+                            Effects.sleep(600);
+
                     }
 
                 }
+
                 case "5" -> {
                     Effects.typePrint("\n게임을 종료합니다...", DELAY_SLOW);
+                    Effects.sleep(600);
                     System.exit(0);
                 }
+
                 default -> {
-                    Effects.typePrint("지금 거신 번호는 없는 번호이오니...",DELAY_SLOW);
+                    Effects.typePrint("지금 거신 번호는 없는 번호이오니...", DELAY_SLOW);
                     System.out.println("...전화가 끊겼다.");
+                    Effects.sleep(600);
+
                 }
 
             }
 
+
         }
     }
-
-}
-
+    }
 

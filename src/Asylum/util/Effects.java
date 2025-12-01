@@ -7,6 +7,8 @@ public abstract class Effects {
 
     //ANSI 리스트
     public static final String RED = "\u001B[31m"; //글씨 빨강
+    public static final String WHITE = "\u001B[37m"; //글씨 하양
+    public static final String BRIGHT_WHITE = "\u001B[97m"; //글씨 밝은 하양
     public static final String BOLD = "\u001B[1m"; //글씨 굵게
     public static final String UNDERLINE = "\u001B[4m"; //글씨 언더라인
     public static final String ITALIC = "\u001B[3m"; //글씨 이탤릭
@@ -44,9 +46,9 @@ public abstract class Effects {
         System.out.println();// \n 넣어주는 역할
 
     }
-    public static final long DELAY_DEFAULT = 230; //여기서 DEFAULT_DELAY는 파람이 아니고 상수(constant)라고 한다고 함. 그래서 대문자 & 언더스코어.
-    public static final long DELAY_SLOW = 400;
-    public static final long DELAY_FAST = 10;
+    public static final long DELAY_DEFAULT = 75; //여기서 DEFAULT_DELAY는 파람이 아니고 상수(constant)라고 한다고 함. 그래서 대문자 & 언더스코어.
+    public static final long DELAY_SLOW = 200;
+    public static final long DELAY_FAST = 50;
 
 //    public enum Speed { //같은 type 모음. 클래스처럼 움직여서 Speed 앞글자가 대문자.
 //
@@ -57,16 +59,16 @@ public abstract class Effects {
 
     }
 
-        //라인 하나씩마다 sleep 기능 넣기
-    public static final long DELAY_LINE = 40;
+    //라인 하나씩마다 sleep 기능 넣기
     public static void typePrintLn(String text) {
-        System.out.println(text);
-        sleep(DELAY_LINE);
+        typePrint(text);
+        sleep(DELAY_FAST);
 
     }
 
+    //라인 하나씩마다 sleep 기능 넣기의 오버로딩
     public static void typePrintLn(String text, long Delay) {
-        System.out.println(text);
+        typePrint(text, Delay);
         sleep(Delay);
 
     }
