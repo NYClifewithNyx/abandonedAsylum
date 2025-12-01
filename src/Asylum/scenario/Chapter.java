@@ -2,9 +2,7 @@ package Asylum.scenario;
 
 import Asylum.util.Effects;
 
-import java.sql.ResultSet;
-
-public class Prologue {
+public class Chapter {
 
     public static void prologue() {
 
@@ -31,13 +29,13 @@ public class Prologue {
         Effects.typePrintLn("나는 '에이, 이런걸로 어떻게 취업이 돼. 네가 평소에 잘한거지!' 라고 했지만,");
         Effects.typePrintLn("친구는 진짜 부적 때문이라며, " + Effects.UNDERLINE + Effects.BRIGHT_WHITE + "이 " + Effects.RED + "부적" + Effects.BRIGHT_WHITE + "을 갖고 있는 한" + Effects.RESET +  " 소원이 이뤄진다고 했다.");
         Effects.typePrintLn("");
-        Effects.typePrintLn("...이 " + Effects.RED + Effects.UNDERLINE + Effects.BOLD + "부적" + Effects.RESET + "을 갖고 있는 한?",200);
+        Effects.typePrintLn("...이 " + Effects.RED + Effects.UNDERLINE + "부적" + Effects.RESET + "을 갖고 있는 한?",200);
         Effects.typePrintLn("");
         Effects.typePrintLn("뭔가 이상해서, 친구에게 물어보았다.");
         Effects.typePrintLn("");
         Effects.typePrintLn("'그럼 그 부적, 없어지면 어떻게 되는데?'");
         Effects.typePrintLn("");
-        Effects.typePrintLn("친구는 주변을 둘러보더니, 나에게 가까이 오더니 귓속말로 말해주었다");
+        Effects.typePrintLn("친구는 주변을 둘러보더니 나에게 가까이 붙어선 귓속말로 말해주었다");
         Effects.typePrintLn("");
         Effects.typePrint("'이 부적 없어지면...'",200);
         Effects.typePrintLn("");
@@ -50,6 +48,11 @@ public class Prologue {
         Effects.typePrintLn(".");
         Effects.typePrintLn(".");
         Effects.sleep(600);
+        return;
+
+    }
+
+    public static void chapter1() {
 
     }
 

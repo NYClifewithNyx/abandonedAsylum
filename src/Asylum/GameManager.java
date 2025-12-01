@@ -11,6 +11,7 @@ import static Asylum.util.Effects.DELAY_SLOW;
 public class GameManager {
 
     private GameState state = new GameState();
+    private boolean skipPrologue = false;
 
     public void start() {
 
@@ -22,7 +23,12 @@ public class GameManager {
         }
 
         titleLoop(true);
-        titleLoop(false);
+        //titleLoop(false); < 나중에 조건 걸어서...
+        if (!skipPrologue) {
+            Chapter.prologue();
+        }
+
+        Chapter.chapter1();
 
     }
 
@@ -46,12 +52,12 @@ public class GameManager {
                     int answer = Interaction.SimpleYN();
 
                     if (answer == 1) {
-                        Chapter1.chapter1();
+                        skipPrologue = true;
 
                     } else {
-                        Prologue.prologue();
-
+                        skipPrologue = false;
                     }
+                    return;
                 }
 
                 case "2" -> System.out.println("loadGame()");
@@ -81,13 +87,13 @@ public class GameManager {
                         return;
 
                     } else {
-                            System.out.println();
-                            Effects.typePrint(Effects.RED + "지금 거신 번호는 없는 번호이오니..." + Effects.RESET);
-                            Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
-                            Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
-                            Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
-                            System.out.println("전화가 끊겼습니다");
-                            Effects.sleep(600);
+                        System.out.println();
+                        Effects.typePrint(Effects.RED + "지금 거신 번호는 없는 번호이오니..." + Effects.RESET);
+                        Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
+                        Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
+                        Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
+                        System.out.println("전화가 끊겼습니다");
+                        Effects.sleep(600);
 
                     }
 
@@ -111,5 +117,10 @@ public class GameManager {
 
         }
     }
+
+    private void mainLoop() {
+        Chapter.chapter1();
     }
+
+}
 
