@@ -3,6 +3,7 @@ package Asylum;
 public class Furniture {
 
     public enum furniture {
+        BED,
         DESK,
         DRAWER,
         MIRROR,
