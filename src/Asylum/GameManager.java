@@ -5,8 +5,6 @@ import Asylum.scenario.*;
 import Asylum.util.Effects;
 import Asylum.util.Interaction;
 
-import static Asylum.util.Effects.DELAY_SLOW;
-
 
 public class GameManager {
 
@@ -18,9 +16,9 @@ public class GameManager {
         Intro.loading();
         int answer = Interaction.introYN();
 
-        if (answer == 1) {
-            Intro.introNote();
-        }
+            if (answer == 1) {
+                Intro.introNote();
+            }
 
         titleLoop(true);
         //titleLoop(false); < 나중에 조건 걸어서...
@@ -32,7 +30,7 @@ public class GameManager {
 
     }
 
-    private void titleLoop(boolean normal) {
+    public void titleLoop(boolean normal) {
         while (true) {
             // 1. 타이틀 출력
             if (normal) {
@@ -118,7 +116,7 @@ public class GameManager {
         }
     }
 
-    private void mainLoop() {
+    public void mainLoop() {
         Chapter.chapter1_Day();
     }
 
