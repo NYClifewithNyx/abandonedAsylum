@@ -69,9 +69,9 @@ public class GameManager {
                     if (normal) {
                         System.out.println();
                         Effects.typePrint(Effects.RED + "어떻게..." + "\n알았지....?" + Effects.RESET);
-                        Effects.typePrint(Effects.RED + "ㅋ", 100);
                         Effects.typePrint(Effects.RED + "ㅋ", 80);
-                        Effects.typePrint(Effects.RED + "ㅋ", 50);
+                        Effects.typePrint(Effects.RED + "ㅋ", 70);
+                        Effects.typePrint(Effects.RED + "ㅋ", 60);
 
                         int lineWidth = 80;
 
@@ -91,7 +91,7 @@ public class GameManager {
                         Effects.typePrint(Effects.RED + "지금 거신 번호는 없는 번호이오니..." + Effects.RESET);
                         Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
                         Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
-                        Effects.typePrint(Effects.RED + "..." + Effects.RESET, DELAY_SLOW);
+                        Effects.typePrint(Effects.RED + "...뚝" + Effects.RESET, DELAY_SLOW);
                         System.out.println("전화가 끊겼습니다");
                         Effects.sleep(600);
 
