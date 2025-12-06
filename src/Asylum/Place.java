@@ -1,6 +1,6 @@
 package Asylum;
 
-public enum Place {
+public enum Place { //파일 타입을 class에서 enum으로 바꿈
 
     HALLWAY, //복도
     NURSE_STATION, //병동 간호 스테이션

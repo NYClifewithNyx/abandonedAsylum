@@ -1,6 +1,6 @@
 package Asylum;
 
-public enum Furniture {
+public enum Furniture { //파일 타입을 class에서 enum으로 바꿈
 
     BED, //환자 침대
     DESK, //책상

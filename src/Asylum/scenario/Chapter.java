@@ -80,7 +80,7 @@ public class Chapter {
         Effects.typePrintLn(".");
         Effects.typePrintLn(".");
         Effects.typePrintLn(".");
-        Effects.typePrintLn("친구는 일어나지 않는다.");
+        Effects.typePrintLn("친구는 일어나지 않는다...");
         Effects.typePrintLn("");
         Effects.typePrintLn("미친듯이 친구 이름을 부르며 친구를 흔들었다.");
         Effects.typePrintLn("");
