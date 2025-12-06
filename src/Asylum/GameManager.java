@@ -28,7 +28,7 @@ public class GameManager {
             Chapter.prologue();
         }
 
-        Chapter.chapter1();
+        Chapter.chapter1_Day();
 
     }
 
@@ -119,7 +119,7 @@ public class GameManager {
     }
 
     private void mainLoop() {
-        Chapter.chapter1();
+        Chapter.chapter1_Day();
     }
 
 }

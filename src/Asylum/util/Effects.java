@@ -94,7 +94,6 @@ public abstract class Effects {
         } catch (InterruptedException ignored) {}
     }
 
-
     //빠른 커서 깜빡임. 일단은 ▼로 하드 코딩
     public static void blinkFast(long ms) {
         for (int i = 0; i < 20; i++) {

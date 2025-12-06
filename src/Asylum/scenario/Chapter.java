@@ -52,7 +52,7 @@ public class Chapter {
 
     }
 
-    public static void chapter1() {
+    public static void chapter1_Day() {
 
         System.out.println();
         Effects.typePrintLn("챕터 1. 낮",200);
