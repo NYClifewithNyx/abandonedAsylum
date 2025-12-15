@@ -2,6 +2,7 @@ package Asylum;
 
 public enum Place { //파일 타입을 class에서 enum으로 바꿈
 
+    ROOM_ER, //응급 병동
     HALLWAY, //복도
     NURSE_STATION, //병동 간호 스테이션
     DOOR_MAIN, //중앙 출입문. 체인이 안쪽으로 걸려있다
