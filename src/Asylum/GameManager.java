@@ -5,6 +5,8 @@ import Asylum.scenario.*;
 import Asylum.util.Effects;
 import Asylum.util.Interaction;
 
+import static Asylum.util.Effects.DELAY_SLOW; //이게 따로 왜 필요해? 갑자기?
+
 
 public class GameManager {
 
@@ -13,11 +15,11 @@ public class GameManager {
 
     public void start() {
 
-        Intro.loading();
+        Scene.loading();
         int answer = Interaction.introYN();
 
             if (answer == 1) {
-                Intro.introNote();
+                Scene.introNote();
             }
 
         titleLoop(true);
@@ -30,13 +32,13 @@ public class GameManager {
 
     }
 
-    public void titleLoop(boolean normal) {
+    private void titleLoop(boolean normal) {
         while (true) {
             // 1. 타이틀 출력
             if (normal) {
-                Intro.title();
+                Scene.title();
             } else {
-                Intro.titleSecret();
+                Scene.titleSecret();
             }
 
             //2. 선택 입력
@@ -60,7 +62,7 @@ public class GameManager {
 
                 case "2" -> System.out.println("loadGame()");
 
-                case "3" -> Intro.introNote();
+                case "3" -> Scene.introNote();
 
                 case "4" -> {
 
