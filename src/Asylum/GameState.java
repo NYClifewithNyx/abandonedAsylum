@@ -17,7 +17,7 @@ public class GameState {
 
     //4. 위치 이동용 메서드
     public void moveTo(Place newPlace) {
-        this.currentPlace = newPlace;
+        this.currentPlace = newPlace; //String 이런거 안 쓰고도 내가 만든 타입을 선언해서 쓸 수 있어서 좀 놀람. 즉 public enum Place가 있어서 새로운 타입이 생겼다는걸 자바가 인식함<을 깨달음
 
     }
 
