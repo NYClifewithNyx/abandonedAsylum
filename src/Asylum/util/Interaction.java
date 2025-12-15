@@ -124,4 +124,37 @@ public class Interaction {
                 }
             }
         }
+
     }
+
+
+    public static int getNumberInRange(int min, int max) {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.print("> ");
+            String input = sc.nextLine();
+
+            try {
+                int value = Integer.parseInt(input);
+
+                if (value < min || value > max) {
+                    System.out.println(min + "부터 " + max + " 사이의 숫자를 입력해주세요.");
+                    continue;
+                }
+
+                return value;
+            } catch (NumberFormatException e) {
+                System.out.println("숫자만 입력해주세요.");
+            }
+
+
+    }
+
+
+
+    }
+
+
+
