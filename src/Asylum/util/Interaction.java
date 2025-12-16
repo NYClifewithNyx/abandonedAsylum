@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Interaction {
 
+
     //인트로에서 YN 받을때
     public static int introYN() {
         //이 int 값을 돌려줘서 밖에서 받아서 switch로 연결되어야하기 때문. 리턴 값이 뭔지를 정하는 것. void는 줄 건 없어 > 게임이 진행이 안됨.
@@ -119,12 +120,10 @@ public class Interaction {
                 sc.nextLine();
                 attempts++;
 
-                    System.out.println("다른 방법은 존재하지 않습니다");
+                System.out.println("다른 방법은 존재하지 않습니다");
 
-                }
             }
         }
-
     }
 
 
@@ -148,13 +147,6 @@ public class Interaction {
             } catch (NumberFormatException e) {
                 System.out.println("숫자만 입력해주세요.");
             }
-
-
+        }
     }
-
-
-
-    }
-
-
-
+}
