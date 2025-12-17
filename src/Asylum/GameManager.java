@@ -38,6 +38,7 @@ public class GameManager {
         state.moveTo(Place.ROOM_ER);//시작 위치 고정
         PlaceManager.currentPlace(state);
         InteractionLoop.start(state);
+
     }
 
     private void titleLoop(boolean normal) {

@@ -3,6 +3,7 @@ package Asylum;
 public class GameState {
 
     public static GameState GameState;
+
     //1. 현재 위치 저장
     private Place currentPlace;
 
@@ -21,6 +22,9 @@ public class GameState {
         this.currentPlace = newPlace; //String 이런거 안 쓰고도 내가 만든 타입을 선언해서 쓸 수 있어서 좀 놀람. 즉 public enum Place가 있어서 새로운 타입이 생겼다는걸 자바가 인식함<을 깨달음
 
     }
+
+    public static Place lastPlace = null;
+
 
 
 }

@@ -10,8 +10,6 @@ public class PlaceManager {
     public static void currentPlace (GameState state) {
         Place place = state.getCurrentPlace();
 
-        System.out.println();
-        System.out.println("어디로 갈까...");
 //        switch (place) {
 //            case ROOM_ER -> Effects.typePrintLn("단체 병동이다. 내가 누워있었던 침대 옆에 친구가 누워있다. \n그런데...");
 //            case HALLWAY -> Effects.typePrintLn("물건이 이리저리 흐트러진 복도로 나왔다.");
