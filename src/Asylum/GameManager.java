@@ -4,6 +4,7 @@ package Asylum;
 import Asylum.scenario.*;
 import Asylum.util.Effects;
 import Asylum.util.Interaction;
+import Asylum.InteractionLoop;
 
 import static Asylum.util.Effects.DELAY_SLOW; //이게 따로 왜 필요해? 갑자기?
 
@@ -28,8 +29,15 @@ public class GameManager {
             Chapter.prologue();
         }
 
-        Chapter.chapter1_Day();
+        mainLoop();
 
+    }
+
+    public void mainLoop() {
+        //Chapter.chapter1_Day();
+        state.moveTo(Place.ROOM_ER);//시작 위치 고정
+        PlaceManager.currentPlace(state);
+        InteractionLoop.start(state);
     }
 
     private void titleLoop(boolean normal) {
@@ -118,9 +126,7 @@ public class GameManager {
         }
     }
 
-    public void mainLoop() {
-        Chapter.chapter1_Day();
-    }
+
 
 }
 

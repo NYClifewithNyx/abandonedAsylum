@@ -2,6 +2,7 @@ package Asylum;
 
 public class GameState {
 
+    public static GameState GameState;
     //1. 현재 위치 저장
     private Place currentPlace;
 
