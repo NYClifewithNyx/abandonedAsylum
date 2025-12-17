@@ -13,7 +13,7 @@ public enum Place { //파일 타입을 class에서 enum으로 바꿈
     ROOM_MAN("105호 병실"), //중년 아저씨의 방
     ROOM_STUDENT("106호 병실"), //10대 학생의 방
     ROOM_CLINIC("진료실"), //진료실
-    ROOM_DOCTOR("원장실") //원장실
+    ROOM_DOCTOR("원장실"); //원장실
 
     private final String displayName;
 

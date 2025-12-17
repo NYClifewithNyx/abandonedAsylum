@@ -13,11 +13,10 @@ public class InteractionLoop {
 
             if (current != lastPlace) {
 
-                System.out.println("나는 지금 " + current + "에 있다...");
+                System.out.println("\n나는 지금 " + current.getDisplayName() + "에 있다...");
 
                 PlaceManager.currentPlace(state);
-                System.out.println();
-                System.out.println("어디로 갈까?");
+                System.out.println("어디로 갈까?\n");
                 lastPlace = current;
             }
 
